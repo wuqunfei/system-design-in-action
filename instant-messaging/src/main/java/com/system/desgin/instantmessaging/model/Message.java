@@ -1,0 +1,68 @@
+package com.system.desgin.instantmessaging.model;
+
+import org.eclipse.persistence.annotations.HashPartitioning;
+import org.eclipse.persistence.annotations.Partitioned;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.sql.Date;
+import java.util.Objects;
+
+@Entity
+@Partitioned("shardToUserId")
+@HashPartitioning(
+        name = "shardToUserId",
+        partitionColumn = @Column(name = "toUserId"),
+        unionUnpartitionableQueries = true)
+
+@Table(name = "T_MESSAGE")
+@IdClass(MessagePK.class)
+public class Message implements Serializable {
+    @Column
+    private Long messageUUID;
+
+    @Id
+    @Column
+    private Long toUserId;
+
+    @Id
+    @Column
+    private Date timestamp;
+
+    @Id
+    @Column
+    private Long fromUserId;
+
+    @Column(length = 140)
+    private String body;
+}
+
+
+class MessagePK implements Serializable{
+    private final Long toUserId;
+    private final Date timestamp;
+    private final Long fromUserId;
+
+    public MessagePK(Long toUserId, Date timestamp, Long fromUserId) {
+        this.toUserId = toUserId;
+        this.timestamp = timestamp;
+        this.fromUserId = fromUserId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MessagePK messageId = (MessagePK) o;
+        return Objects.equals(toUserId, messageId.toUserId) && Objects.equals(timestamp, messageId.timestamp) && Objects.equals(fromUserId, messageId.fromUserId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(toUserId, timestamp, fromUserId);
+    }
+}
