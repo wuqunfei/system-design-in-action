@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @Partitioned("shardToUserId")
@@ -23,7 +24,7 @@ import java.util.Objects;
 @IdClass(MessagePK.class)
 public class Message implements Serializable {
     @Column
-    private Long messageUUID;
+    private UUID messageUUID;
 
     @Id
     @Column
