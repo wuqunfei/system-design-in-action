@@ -7,7 +7,6 @@
 		<artifactId>system-design-in-action</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.system.desgin</groupId>
 	<artifactId>instantMessaging</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>instantMessaging</name>
