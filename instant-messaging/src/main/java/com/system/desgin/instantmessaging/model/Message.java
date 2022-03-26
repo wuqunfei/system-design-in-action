@@ -1,18 +1,25 @@
 package com.system.desgin.instantmessaging.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Table;
+
 import org.eclipse.persistence.annotations.HashPartitioning;
 import org.eclipse.persistence.annotations.Partitioned;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.Table;
 import java.io.Serializable;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.UUID;
 
+
+/***
+ * @HashPartitioning
+ */
 @Entity
 @Partitioned("shardToUserId")
 @HashPartitioning(
@@ -32,7 +39,7 @@ public class Message implements Serializable {
 
     @Id
     @Column
-    private Date timestamp;
+    private Timestamp timestamp;
 
     @Id
     @Column
@@ -42,6 +49,9 @@ public class Message implements Serializable {
     private String body;
 }
 
+/***
+ *  Cluster Index in mysql called Primary Key
+ */
 
 class MessagePK implements Serializable{
     private final Long toUserId;
