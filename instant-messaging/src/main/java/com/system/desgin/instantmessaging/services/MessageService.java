@@ -16,7 +16,7 @@ public class MessageService {
      *  }]
      *  Multi-Message format
      */
-    public void sendMessage(Message message) {
-
+    public boolean sendMessage(Message message) {
+        return false;
     }
 }
