@@ -32,7 +32,8 @@ public class Feed {
 }
 
 class FeedClusterKey implements Serializable {
-    //    Query where userId > createTime > postId
+    //    Query where userId > createTime > postId order
+    //    Cache pagination for next offset and limit
     private Long userId;
     private Date createTime;
     private Long postId;

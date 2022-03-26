@@ -29,6 +29,8 @@ public class Post {
     public String photoURL; //Object Storage URL address
     @Column
     boolean isCelebrity;
+
+    // is celerity can be pre-cache feed
 }
 
 
