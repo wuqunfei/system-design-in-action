@@ -11,8 +11,20 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>gis-system</name>
     <description>gis-system</description>
+    <properties>
+        <ignite.version>2.12.0</ignite.version>
+    </properties>
     <dependencies>
-
+        <dependency>
+            <groupId>org.apache.ignite</groupId>
+            <artifactId>ignite-core</artifactId>
+            <version>${ignite.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ignite</groupId>
+            <artifactId>ignite-spring-boot-autoconfigure-ext</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
