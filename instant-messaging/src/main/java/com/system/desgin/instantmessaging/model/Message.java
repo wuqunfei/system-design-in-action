@@ -28,7 +28,7 @@ import java.util.UUID;
         unionUnpartitionableQueries = true)
 
 @Table(name = "T_MESSAGE")
-@IdClass(MessagePK.class)
+@IdClass(MessageClusterKey.class)
 public class Message implements Serializable {
     @Column
     private UUID messageUUID;
@@ -53,12 +53,12 @@ public class Message implements Serializable {
  *  Cluster Index in mysql called Primary Key
  */
 
-class MessagePK implements Serializable{
+class MessageClusterKey implements Serializable{
     private final Long toUserId;
     private final Date timestamp;
     private final Long fromUserId;
 
-    public MessagePK(Long toUserId, Date timestamp, Long fromUserId) {
+    public MessageClusterKey(Long toUserId, Date timestamp, Long fromUserId) {
         this.toUserId = toUserId;
         this.timestamp = timestamp;
         this.fromUserId = fromUserId;
@@ -68,7 +68,7 @@ class MessagePK implements Serializable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MessagePK messageId = (MessagePK) o;
+        MessageClusterKey messageId = (MessageClusterKey) o;
         return Objects.equals(toUserId, messageId.toUserId) && Objects.equals(timestamp, messageId.timestamp) && Objects.equals(fromUserId, messageId.fromUserId);
     }
 
