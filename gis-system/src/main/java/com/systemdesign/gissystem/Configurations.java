@@ -1,6 +1,7 @@
 package com.systemdesign.gissystem;
 
-import com.systemdesign.gissystem.model.Location;
+import com.systemdesign.gissystem.model.DriverHashLocation;
+import com.systemdesign.gissystem.model.DriverLocation;
 import org.apache.ignite.Ignition;
 import org.apache.ignite.client.ClientCache;
 import org.apache.ignite.client.IgniteClient;
@@ -37,9 +38,17 @@ public class Configurations {
      * @param client, only need 30 seconds to persist user information
      * @return cache
      */
-    @Bean(name = "locations")
-    public ClientCache createLocationCache(@Qualifier("cacheClient") IgniteClient client) {
-        ClientCache<String, Location> locations = client.getOrCreateCache("locations");
+    @Bean(name = "driverHashLocation")
+    public ClientCache createDriverHashLocationCache(@Qualifier("cacheClient") IgniteClient client) {
+        ClientCache<String, DriverHashLocation> locations = client.getOrCreateCache("driverHashLocation");
+        locations.withExpirePolicy(new CreatedExpiryPolicy(new Duration(TimeUnit.SECONDS, 30)));
+
+        return locations;
+    }
+
+    @Bean(name = "driverLocation")
+    public ClientCache createDriverLocationCache(@Qualifier("cacheClient") IgniteClient client) {
+        ClientCache<String, DriverLocation> locations = client.getOrCreateCache("driverLocation");
         locations.withExpirePolicy(new CreatedExpiryPolicy(new Duration(TimeUnit.SECONDS, 30)));
         return locations;
     }
