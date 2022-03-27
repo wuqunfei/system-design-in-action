@@ -22,7 +22,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.ignite</groupId>
-            <artifactId>ignite-spring-boot-autoconfigure-ext</artifactId>
+            <artifactId>ignite-spring-boot-thin-client-autoconfigure-ext</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
