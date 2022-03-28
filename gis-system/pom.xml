@@ -25,6 +25,12 @@
             <artifactId>ignite-spring-boot-thin-client-autoconfigure-ext</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>io.sgr</groupId>
+            <artifactId>s2-geometry-library-java</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>
