@@ -1,7 +1,6 @@
 package services;
 
 import info.debatty.java.stringsimilarity.Levenshtein;
-import org.apache.http.HttpResponse;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
