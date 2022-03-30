@@ -97,6 +97,11 @@
             <artifactId>mariadb</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-aws-context</artifactId>
+            <version>2.2.6.RELEASE</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -114,5 +119,7 @@
         <module>instant-messaging</module>
         <module>instagram</module>
         <module>gis-system</module>
+        <module>yelp</module>
+        <module>webCrawler</module>
     </modules>
 </project>
