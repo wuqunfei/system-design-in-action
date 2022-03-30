@@ -19,6 +19,9 @@ public class HtmlStore {
     private String url;
 
     @Column
+    /**
+     *  String: Row + column + timestamp
+     */
     private List<String> contents;
 
     public String getDomain() {
