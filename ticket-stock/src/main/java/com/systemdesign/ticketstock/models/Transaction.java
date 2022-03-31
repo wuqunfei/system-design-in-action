@@ -13,7 +13,7 @@ public class Transaction {
 
 
     /***
-     *  Need confirm ticket
+     *  Need confirm ticket, distribution case
      */
     @OneToOne
     private Ticket ticket;
