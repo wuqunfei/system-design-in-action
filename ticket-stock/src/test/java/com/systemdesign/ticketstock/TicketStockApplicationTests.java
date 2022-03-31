@@ -1,4 +1,4 @@
-package com.example.ticketstock;
+package com.systemdesign.ticketstock;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

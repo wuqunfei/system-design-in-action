@@ -1,4 +1,4 @@
-package com.example.ticketstock;
+package com.systemdesign.ticketstock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
