@@ -39,9 +39,18 @@ public class Ticket {
     @Column
     private Integer price;
 
-    @Column
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private TicketStatus status;
 
     @Column
-    private Date updateTime;
+    private Date modifiedTime;
+}
+
+/***
+ * Ticket status, when click select action, the status is pending for limited time windows like 10 minutes.
+ */
+enum TicketStatus{
+    AVAILABLE,
+    NOT_AVAILABLE,
+    PENDING
 }

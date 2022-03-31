@@ -18,12 +18,18 @@ public class Transaction {
     @OneToOne
     private Ticket ticket;
 
-    @Column
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private TransactionStatus status;
 
     @Column
     private String type;
 
     @Column
     private Long paymentId;
+}
+
+enum TransactionStatus{
+    SUCCESS,
+    FAILED,
+    PENDING
 }
