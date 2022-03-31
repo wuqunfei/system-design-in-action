@@ -21,15 +21,26 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     private TransactionStatus status;
 
-    @Column
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TransactionType type;
 
     @Column
     private Long paymentId;
+
+    /**
+     * Linked to origin or related transaction id for refund or other operations
+     */
+    @Column
+    private Long linkedTransactionId;
 }
 
 enum TransactionStatus{
     SUCCESS,
     FAILED,
-    PENDING
+    PENDING // when customer is paying
+}
+
+enum TransactionType{
+    PAYMENT,
+    REFUND
 }
