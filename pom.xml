@@ -121,5 +121,6 @@
         <module>gis-system</module>
         <module>yelp</module>
         <module>webCrawler</module>
+        <module>ticket-stock</module>
     </modules>
 </project>
