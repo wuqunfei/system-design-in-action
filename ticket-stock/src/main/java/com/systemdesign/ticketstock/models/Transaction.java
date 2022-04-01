@@ -34,13 +34,22 @@ public class Transaction {
     private Long linkedTransactionId;
 }
 
-enum TransactionStatus{
+enum TransactionStatus {
     SUCCESS,
     FAILED,
     PENDING // when customer is paying
 }
 
-enum TransactionType{
+enum TransactionType {
     PAYMENT,
     REFUND
 }
+
+/***
+ * https://developer.ibm.com/articles/use-saga-to-solve-distributed-transaction-management-problems-in-a-microservices-architecture/
+ * https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture#possible_solutions
+ * https://www.zuehlke.com/en/insights/design-for-failure-distributed-transactions-in-microservices
+ * https://www.vinsguru.com/orchestration-saga-pattern-with-spring-boot/
+ * https://www.baeldung.com/java-atomikos
+ * https://www.baeldung.com/java-reactive-systems
+ ***/
