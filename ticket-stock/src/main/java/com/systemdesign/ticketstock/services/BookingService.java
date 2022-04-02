@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class SelectSeatService {
+public class BookingService {
 
     private PaymentService paymentService;
 
-    public SelectSeatService(PaymentService paymentService) {
+    public BookingService(PaymentService paymentService) {
 
         this.paymentService = paymentService;
     }
