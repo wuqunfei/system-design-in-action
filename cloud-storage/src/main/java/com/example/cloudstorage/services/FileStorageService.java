@@ -3,6 +3,7 @@ package com.example.cloudstorage.services;
 import com.example.cloudstorage.services.models.FileJournaling;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,5 +19,13 @@ public class FileStorageService {
         file.setRelativePath(relativePath);
         file.setBlockList(blockList);
         return file;
+    }
+
+    public List<File> download(List<String> blocks){
+        return Collections.emptyList();
+    }
+
+    public List<String> upload(List<File> blocks){
+        return Collections.emptyList();
     }
 }
