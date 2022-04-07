@@ -123,5 +123,8 @@
         <module>webCrawler</module>
         <module>ticket-stock</module>
         <module>gis-system</module>
+        <module>search-enine</module>
+        <module>netflix</module>
+        <module>monitoring</module>
     </modules>
 </project>
