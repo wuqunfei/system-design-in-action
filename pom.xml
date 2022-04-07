@@ -126,5 +126,6 @@
         <module>search-enine</module>
         <module>netflix</module>
         <module>monitoring</module>
+        <module>autocomplete</module>
     </modules>
 </project>
