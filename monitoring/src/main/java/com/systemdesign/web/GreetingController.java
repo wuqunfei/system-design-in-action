@@ -16,6 +16,7 @@ import static java.lang.Thread.sleep;
 
 /***
  * https://tomgregory.com/the-four-types-of-prometheus-metrics/
+ * https://eng.uber.com/m3/
  */
 @RestController
 public class GreetingController {
