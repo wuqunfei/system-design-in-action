@@ -127,5 +127,6 @@
         <module>netflix</module>
         <module>monitoring</module>
         <module>autocomplete</module>
+        <module>distributed-cache</module>
     </modules>
 </project>
