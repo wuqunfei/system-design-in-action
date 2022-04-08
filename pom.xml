@@ -128,5 +128,6 @@
         <module>monitoring</module>
         <module>autocomplete</module>
         <module>distributed-cache</module>
+        <module>rate-limiter</module>
     </modules>
 </project>
